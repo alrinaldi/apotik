@@ -1,0 +1,108 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+
+$tosca:#3cb4ab;
+$purple:#5b5476;
+$pink:#ff3366;
+$grey:#666666;
+
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+}
+@mixin border-rad($radius) {
+    border-radius: $radius;
+    -ms-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+@mixin anim-ease($anim){
+-webkit-transition:$anim;
+	-moz-transition:$anim;
+	-o-transition:$anim;
+	-ms-transition:$anim;
+}
+
+
+body {
+	font-family:'Montserrat';
+}
+
+.wrap-form-contact {
+	min-height:100%;
+	background: $tosca;
+  background: -webkit-linear-gradient(-45deg, $purple, $tosca);
+  background: -o-linear-gradient(-45deg, $purple, $tosca);
+  background: -moz-linear-gradient(-45deg, $purple, $tosca);
+  background: linear-gradient(-45deg, $purple, $tosca);
+}
+
+.form-contact {
+	width:400px;
+	margin:30% auto;
+	padding:60px 50px 60px 50px;
+	background-color:rgba(white,0.25);
+	@include box-shadow(0px 0px 20px rgba(black,0.15));
+	
+	h3 {
+		margin:0px 0px 40px 0px;
+		font-family:'Montserrat';
+		font-weight:100;
+		font-size:16px;
+		color:white;
+		
+		span {
+			font-weight:600;
+			font-size:26px;
+			margin-right:10px;
+		}
+	}
+}
+
+.form-group {
+	input[type=email], input[type=password] {
+		margin-bottom:20px;
+		border:none;
+		color:$grey;
+		@include border-rad(30px);
+		@include box-shadow(none);
+		@include anim-ease(all 0.3s ease);
+		&:focus, &:active {
+			background-color:rgba(white,0.6);
+			border:none;
+			@include box-shadow(none);
+		}
+	}
+}
+
+.checkbox {
+	label {
+		color:white;
+	}
+	a {
+		color:white;
+		float:right;
+	}
+}
+
+.btn-default {
+	color:white;
+	font-size:16px;
+	background-color:$pink;
+	padding:6px 40px;
+	margin-top:30px;
+	border:solid $pink 2px;
+	text-transform:uppercase;
+	@include border-rad(30px);
+	@include box-shadow(none);
+	@include anim-ease(all 0.3s ease);
+	&:hover, &:focus, &:active {
+		background-color:transparent;
+		border:solid white 2px;
+		color:white;
+	}
+}
